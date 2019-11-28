@@ -1,15 +1,15 @@
 package com.javierorbe.common.adt
 
-internal class NodeIterator<E>(first: Node<E>?) : Iterator<E> {
+internal class DoubleNodeIterator<E>(first: DoubleNode<E>?) : Iterator<E> {
 
-    private var current: Node<E>? = first
+    private var current: DoubleNode<E>? = first
 
     override fun hasNext(): Boolean {
         return current != null
     }
 
     override fun next(): E {
-        val e = current!!.value
+        val e = current!!.value;
         current = current?.next
         return e
     }

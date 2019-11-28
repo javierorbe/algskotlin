@@ -2,7 +2,7 @@ package com.javierorbe.common.adt
 
 abstract class AbstractCollection<E> : Collection<E> {
 
-    var size = 0
+    protected var size = 0
 
     override fun isEmpty(): Boolean {
         return size == 0
@@ -10,5 +10,12 @@ abstract class AbstractCollection<E> : Collection<E> {
 
     override fun size(): Int {
         return size
+    }
+
+    override fun contains(e: E): Boolean {
+        for (other in this)
+            if (other == e)
+                return true
+        return false
     }
 }
